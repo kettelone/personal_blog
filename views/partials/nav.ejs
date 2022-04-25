@@ -1,0 +1,49 @@
+<nav>
+    <div class="site-title">
+      <a href="/"><h1>Kharkiv Blog</h1></a>
+      <p>The hero city
+        <a href="https://en.wikipedia.org/wiki/Ukraine">
+          <img src="/ukraine.svg" class="ukraine-icon" alt="Ukraine flag">
+       </a>
+      </p>
+     
+    </div>
+   <a class="mirror-stream-container" href="https://en.wikipedia.org/wiki/Kharkiv" >
+      <img src="/mirror-stream.jpg" class="mirror-stream" alt="Kharkiv mirror-stream">
+   </a>
+   <div class="navbar">
+    <div>
+      <li>Welcome, <%= user.nickname %></li>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Menu
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <% if (user){ %>
+          <a href="/">Blogs</a>
+          <a href="/about">About</a>
+          <a href="/blogs/create">New Blog</a>
+          <a href="/contact-us">Contact us</a>
+          <a href="/logout" class="btn">Log out</a>
+        <% } else { %>
+          <a href="/login" class="btn">Log in</a>
+          <a href="/signup" class="btn">Sign up</a>
+          <% } %>
+      </div>
+    </div>
+  </div>
+    <!-- <ul>
+      <% if (user){ %>
+          <li><a href="/">Blogs</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/blogs/create">New Blog</a></li>
+          <li><a href="/contact-us">Contact us</a></li>
+          <li>Welcome, <%= user.email %></li>
+          <li><a href="/logout" class="btn">Log out</a></li>
+      <% } else { %>
+          <li><a href="/login" class="btn">Log in</a></li>
+          <li><a href="/signup" class="btn">Sign up</a></li>
+      <% } %>
+    </ul> -->
+  </nav>

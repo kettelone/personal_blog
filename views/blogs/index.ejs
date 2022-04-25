@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head.ejs')%>
+<body>
+    <%- include('../partials/nav.ejs')%>
+
+    <%# Kharkiv wether widget %>
+    <div class="widget-section">
+        <div class="widget weather-widget">
+            <!-- <div class="weatherIcon"><i class="wi wi-day-cloudy"></i></div> -->
+            <div class="weatherInfo">
+              <div class="temperature"><span> <%= weatherInfo.current.temp%>&deg;</span></div>
+              <div class="description">    
+                <div class="weatherCondition"><%= weatherInfo.current.weather[0].description%></div>    
+                <div class="place">Kharviv, Ukraine</div>
+              </div>
+            </div>
+            <div class="date">
+                <%= new Date(weatherInfo.current.dt * 1000 -2*3600*1000).toLocaleString('en-us', {weekday:'long'})%>
+                <br>
+                <%= new Date(weatherInfo.current.dt * 1000 -2*3600*1000).getDate() %>
+                <%= new Date(weatherInfo.current.dt * 1000 -2*3600*1000).toLocaleString('default', { month: 'long' }) %>
+                <br>
+                    <%= new Date(weatherInfo.current.dt * 1000 -2*3600*1000). toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }) %>
+            </div>
+        </div>
+        <div class="widget currency-rate-widget">
+            <!-- <div class="weatherIcon"><i class="wi wi-day-cloudy"></i></div> -->
+            <div class="currencyInfo">
+                <div>USD</div>
+                <div>EUR</div>
+            </div>
+            <div class="date">
+                <%= currencyInfo.usd%> ₴
+                <br>
+                <%= currencyInfo.eur%> ₴
+            </div>
+        </div>
+    </div>
+
+        <hr class="hr">
+    <div class="front-container">
+        <img src="/front-photo.jpg" class="front-photo" alt="Kharkiv photo">
+    </div>
+    <div class="blogs content">
+        <h2>All Blogs</h2>
+
+        <% if(blogs.length > 0){%>
+            <% blogs.forEach(blog => { %>
+            <a class="single" href="/blogs/<%= blog._id %>">
+                <h3 class="title"><%= blog.title%></h3>
+                <p class ="snippet"><%= blog.snippet%></p>
+            </a>
+        <% }) %>
+        <% }else { %>
+
+            <p>There is no data to display</p>
+
+            <% } %>
+    </div>
+
+    <%- include('../partials/footer.ejs')%>
+    
+</body>
+</html>

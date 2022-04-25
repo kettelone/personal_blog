@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head.ejs')%>
+
+
+<body>
+   
+    <%- include('./partials/nav.ejs')%>
+
+        <form action="/contact-us" class="contact-page" method="POST">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="message">Your message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button>Submit</button>
+          </form>
+        <% if(message){ %>
+        <div class="message-sent-wrap">
+            <h3 class="message-sent"><%= message %></h3>
+        <div>
+        <% }; %>
+    
+    <%- include('./partials/footer.ejs')%>
+    
+</body>
+</html>

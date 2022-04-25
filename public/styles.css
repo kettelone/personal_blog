@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css);    
+body{
+      margin: 20px auto;
+      padding: 0 20px;
+      font-family: 'Noto Serif', serif;
+    }
+    p, h1, h2, h3, a, ul{
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      color: #222;
+    }
+
+    /* nav & footer styles */
+    nav{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      text-transform: uppercase;
+    }
+    nav ul{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    nav li{
+      list-style-type: none;
+      margin-left: 20px;
+    }
+    nav h1{
+      font-size: 3em;
+    }
+
+    .btn{
+      color: red;
+    }
+    nav p, nav a{
+      color: #777;
+      font-weight: 300;
+    }
+    footer{
+      color: #777;
+      text-align: center;
+      margin: 80px auto 20px;
+    }
+    h2{
+      margin-bottom: 40px;
+    }
+    h3{
+      text-transform: capitalize;
+      margin-bottom: 8px;
+    }
+    .content{
+      margin-left: 20px;
+    }
+
+    /*dropdown navbar*/
+
+
+    /* -----------Navbar container(begining)-------------- */
+.navbar {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: grey;
+  border-radius: 25%;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0 10px; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+ /* -----------Navbar container(end)-------------- */
+
+
+/*mirror-stream icon*/
+    .mirror-stream{
+      max-height: 100px;
+    }
+
+    /*ukraine-icon*/
+    .ukraine-icon{
+      height: 16px;
+    }
+
+    /* index styles */
+    .blogs a{
+      display: block;
+      margin: 40px 0;
+      padding-left: 30px;
+      border-left: 6px solid crimson;
+    }
+    .blogs a:hover h3{
+      color: crimson;
+    }
+
+    .front-photo{
+      width: 100%;
+    }
+
+    /* details styles */
+    .details{
+      position: relative;
+      text-align: center;
+    }
+    .delete{
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-radius: 50%;
+      padding: 8px;
+    }
+    .delete:hover{
+      cursor: pointer;
+      box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+    }
+
+    .comment{
+      border: 1px solid;
+      border-radius: 5px;
+      display:flex;
+      padding: 5px;
+      margin: 5px;
+      justify-content: space-between
+    }
+
+    .delete-comment:hover{
+      cursor: pointer;
+      box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+    }
+
+    .comment-form{
+      margin: 2em;
+    }
+
+    .sort-by{
+      border-radius: 5px;
+      border: solid black 1px;
+      background-color: grey;
+      color: white;
+      width: 100px;
+      cursor: pointer;
+
+    }
+
+    .sort-by:hover{
+      background-color: #080705;
+    }
+
+
+    /* create styles */
+    .create-blog form{
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .create-blog input,
+    .create-blog textarea{
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 8px;
+    }
+    .create-blog label{
+      display: block;
+      margin-top: 24px;
+    }
+    textarea{
+      height: 120px;
+    }
+    .create-blog button{
+      margin-top: 20px;
+      background: crimson;
+      color: white;
+      padding: 6px;
+      border: 0;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+
+/*horizontal line*/
+    .hr{
+      margin:20px 0px;
+    }
+/*widget-section*/
+.widget-section{
+  display: flex
+}
+
+/*weather widget css*/
+.widget {
+  display: flex;
+  margin:auto;
+  height: 100px;
+  width: 500px;
+  flex-wrap: wrap;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+}
+.widget .weatherIcon {
+  flex: 1 100%;
+  height: 60%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background: #fafafa;
+  font-family: weathericons;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 100px;
+}
+.widget .weatherIcon i {
+  padding-top: 30px;
+}
+.widget .weatherInfo {
+  flex: 0 0 70%;
+  background: #080705;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.widget .weatherInfo .temperature {
+  flex: 0 0 40%;
+  width: 100%;
+  font-size: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+.widget .weatherInfo .description {
+  flex: 0 60%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+.widget .weatherInfo .description .weatherCondition {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 100;
+}
+.widget .weatherInfo .description .place {
+  font-size: 24px;
+}
+.widget .date {
+  flex: 0 0 30%;
+  background: #70c1b3;
+  text-align: center;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+p {
+  bottom: 0%;
+  right: 2%;
+}
+p a {
+  text-decoration: none;
+  color: #e4d6a7;
+  font-size: 10px;
+}
+
+/*currency-widget*/
+
+.currencyInfo{
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #080705;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+/*contact-form*/
+.contact-page {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.contact-page input,
+.contact-page textarea{
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+}
+.contact-page label{
+  display: block;
+  margin-top: 24px;
+}
+textarea{
+  height: 120px;
+}
+.contact-page button{
+  margin-top: 20px;
+  background: orange;
+  color: white;
+  padding: 6px;
+  border: 0;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+/*message-sent*/
+.message-sent-wrap{
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.message-sent{
+  text-align: center;
+  margin:10px;
+  color:#ff0099;
+}
+
+/*login form error message div*/
+
+.error{
+  max-width: 400px;
+  height: 10px;
+  margin: 0 auto;
+  color: #ff0099;
+  margin: 10px 2px;
+  font-size: 0.8em;
+  font-weight: bold;
+}

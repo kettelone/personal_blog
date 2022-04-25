@@ -1,0 +1,85 @@
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+
+<body>
+  <%- include("../partials/nav.ejs") %>
+
+  <div class="details content">
+    <h2><%= blog.title %></h2>
+    <div class="content">
+      <p><%= blog.body %></p>
+      <form class="comment-form" action="/blogs/:id/comments" method="POST">
+        <label for="comment">Comments:</label>
+        <input type="text" id="comment" name="comment">
+        <button>Submit</button>
+      </form>
+      <div class="sort-by">Sort</div>
+      <div class="comments-container">
+        <% comments.forEach((comment) =>{ %>
+          <div class="comment each-comment">
+            <div class="info">
+              <h3><%= comment.blog_comment %></h3>
+             <b><span><%= comment.user_nickname %> : </span></b>
+              <span><%= new Date(comment.createdAt).toLocaleString('en-us',{ year: 'numeric', month: 'long', day: 'numeric', hour : 'numeric', minute : 'numeric'}) %></span>
+            </div>
+            <div>
+              <a class="delete-comment" data-comment="<%= comment._id %>" data-blog="<%= comment.blog_id %>">
+                <img src="/delete.svg" alt="delete icon">
+              </a>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+      <a class="delete" data-doc="<%= blog._id %>">
+        <img src="/delete.svg" alt="delete icon">
+      </a>
+    </div>
+  </div>
+
+  <%- include("../partials/footer.ejs") %>
+
+  <script>
+    //delete blog button handler
+    const trashcan = document.querySelector('a.delete');
+    trashcan.addEventListener('click', (e) => {
+      const endpoint = `/blogs/${trashcan.dataset.doc}`;
+      fetch(endpoint, { 
+        method: 'DELETE',
+      })
+      .then(response => response.json())
+      .then(data => window.location.href = data.redirect)
+      .catch(err => console.log(err));
+    });
+    
+    //delete comment button handler
+    
+    const trashcan_comment = document.querySelectorAll('a.delete-comment');
+    trashcan_comment.forEach(item =>{
+        item.addEventListener('click', (e) => {
+        const endpoint = `/blogs/${item.dataset.blog}/${item.dataset.comment}/comments`;
+        fetch(endpoint, { 
+          method: 'DELETE'      
+        })
+        .then(response => response.json())
+        .then(data => window.location.href = data.redirect)
+        .catch(err => console.log(err));
+      })
+    })
+  </script>
+
+  <!-- <script>
+    const sortButton = document.querySelector('.sort-by');
+    sortButton.addEventListener('click', (e)=>{
+      e.preventDefault()
+    const comments = document.querySelectorAll('.comment')
+    const commentsArray = [...comments]
+    const sortedArray = []
+    commentsArray.forEach((el) => {
+      sortedArray.unshift(el)
+    })
+    console.log(commentsArray)
+    console.log(sortedArray)
+    })
+  </script> -->
+</body>
+</html>
