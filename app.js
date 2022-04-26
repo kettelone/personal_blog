@@ -18,7 +18,7 @@ const dbURI =
   'mongodb+srv://blogUser:guest12345@cluster0.3b5zr.mongodb.net/note?retryWrites=true&w=majority'
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => app.listen(3000))
+  .then(() => app.listen(process.env.PORT || 80))
   .catch((err) => console.log(err))
 
 //register view engine
