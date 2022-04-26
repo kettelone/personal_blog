@@ -3,7 +3,7 @@ const transporter = nodemailer.createTransport({
   host: 'smtp.mailtrap.io',
   port: 2525,
   auth: {
-    user: process.env.MY_EMAIL,
+    user: process.env.MY_USERNAME,
     pass: process.env.MY_PASSWORD,
   },
 })
@@ -12,8 +12,8 @@ const contactUs = (req, res) => {
   const { name, message } = req.body
 
   const mailOptions = {
-    from: 'bkrevsun@gmail.com',
-    to: 'bkrevsun@gmail.com',
+    from: process.env.MY_EMAIL,
+    to: process.env.MY_EMAIL,
     name: name,
     text: message,
   }
