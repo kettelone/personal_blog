@@ -1,8 +1,7 @@
 const nodemailer = require('nodemailer')
 const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 587,
-  secure: false,
+  host: 'smtp.mailtrap.io',
+  port: 2525,
   auth: {
     user: process.env.MY_EMAIL,
     pass: process.env.MY_PASSWORD,
