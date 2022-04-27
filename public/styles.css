@@ -399,3 +399,49 @@ textarea{
   font-size: 0.8em;
   font-weight: bold;
 }
+
+
+@media screen and (max-width: 400px) {
+  .main-nav{
+    flex-direction: column;
+  }
+
+  .navbar{
+    flex-direction: column;
+
+  }
+
+  .blog-name{
+    font-size: 1.5em
+  }
+
+  .hero-city{
+    text-align: center;
+  }
+
+  .widget-section{
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .widget{
+    height: 50px;
+    width: 100%;
+  }
+
+  .widget .weatherInfo .temperature {
+    font-size: 1em;
+  }
+
+  .widget .date{
+    font-size: 1em;
+  }
+
+ .currency-rate-widget{
+   margin-top: 7%;
+ }
+
+ .widget .weatherInfo .description .weatherCondition {
+  font-size: 14px;
+}
+}
