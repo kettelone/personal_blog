@@ -36,9 +36,15 @@ body{
     nav h1{
       font-size: 3em;
     }
+    .btn-wrapper{
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
 
     .btn{
-      color: red;
+      color: mediumblue;
+      text-decoration: underline;
     }
     nav p, nav a{
       color: #777;
@@ -156,6 +162,11 @@ body{
       color: crimson;
     }
 
+    .front-container{
+      width: 100vw;
+      background-image: url("./front-photo.jpg");
+    }
+
     .front-photo{
       width: 100%;
     }
@@ -219,7 +230,7 @@ body{
     .create-blog textarea{
       display: block;
       width: 100%;
-      margin: 10px 0;
+      margin: 10px 3px;
       padding: 8px;
     }
     .create-blog label{
@@ -231,9 +242,9 @@ body{
     }
     .create-blog button{
       margin-top: 20px;
-      background: crimson;
+      background: darkslategrey;
       color: white;
-      padding: 6px;
+      padding: 6px 50px;
       border: 0;
       font-size: 1.2em;
       cursor: pointer;
@@ -367,9 +378,9 @@ textarea{
 }
 .contact-page button{
   margin-top: 20px;
-  background: orange;
+  background: darkslategrey;
   color: white;
-  padding: 6px;
+  padding: 6px 50px;
   border: 0;
   font-size: 1.2em;
   cursor: pointer;
@@ -403,6 +414,7 @@ textarea{
 @media screen and (max-width: 400px) {
   .main-nav{
     flex-direction: column;
+    text-align: center;
   }
 
   .navbar{
@@ -448,6 +460,7 @@ textarea{
   width: 90vw;
   border: solid;
   border-radius: none;
+  margin: 5px 0px;
 }
 
 .dropdown-content{
@@ -463,6 +476,45 @@ h2{
 }
 
 footer{
+  margin: 15px;
+  padding: 15px;
+}
+
+.front-container{
+  width: auto;
+  height: 239px;
+  background-image: url("./front-photo-small.jpg");
+}
+.create-blog form{
+  text-align: center;
+}
+
+.content{
   margin: 5px;
+}
+
+.create-blog input,
+.create-blog textarea{
+  display: block;
+  width: 80vw;
+  margin: 10px 3px;
+  padding: 8px;
+}
+
+.contact-page{
+text-align: center;
+}
+.contact-page input{
+  width: 85vw
+}
+
+.contact-page textarea{
+  width: 85vw
+
+}
+
+.auth-body{
+  margin: 10px 10px;
+  padding: 10px 10px;
 }
 }

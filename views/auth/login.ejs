@@ -6,10 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/styles.css">
 </head>
-<nav>
+<!-- <nav>
     <li><a href="/signup" class="btn">Sign up</a></li>
-</nav>
-<body>
+</nav> -->
+<body class="auth-body">
     <form action="/login" class="contact-page" method="POST">
         <label for="signup">Login</label>
         <input type="text" id="signup" name="email" placeholder="email" required>
@@ -17,6 +17,10 @@
         <input type="password" id="password" name="password" placeholder="Password" required>
         <div class="password error"></div>
         <button>Login</button>
+        <div class="btn-wrapper">
+            <a href="/signup" class="btn">Sign up if not registered...</a>
+        </div>
+       
       </form>
 
       <script>

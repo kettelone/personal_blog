@@ -6,10 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/styles.css">
 </head>
-<nav>
-    <li><a href="/login" class="btn">Log in</a></li>
-</nav>
-<body>
+<body class="auth-body">
     <form action="/signup" class="contact-page">
         <label for="signup">Signup</label>
         <input type="text" id="signup" name="email" placeholder="email" required>
@@ -19,6 +16,9 @@
         <input type="password" id="password" name="password" placeholder="password" required>
         <div class="password error"></div>
         <button>Sign up</button>
+        <div class="btn-wrapper">
+            <a href="/login" class="btn">Log in</a>
+        </div>
       </form>
 
       <script>
