@@ -1,19 +1,20 @@
 const Comment = require('../models/comment')
-const Blog = require('../models/blog')
+// const Blog = require('../models/blog')
 
 const save_comment = async (req, res) => {
   try {
     const response = res.cookie()
     const user_nickname = response.locals.user.nickname
 
-    const baseUrl = 'http://localhost:3000/blogs/'
+    const baseUrl = `http://localhost/blogs/`
     const url = req.headers.referer
     const startIndex = baseUrl.length
     const blog_id = url.substr(startIndex)
+    console.log('blog_id is: ', blog_id)
     const blog_comment = req.body.comment
     const comment = new Comment({ blog_id, blog_comment, user_nickname })
     await comment.save()
-    res.redirect(`/blogs/${blog_id}`)
+    res.redirect(`http://localhost/blogs/${blog_id}`)
   } catch (e) {
     console.log(e)
   }

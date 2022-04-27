@@ -163,8 +163,9 @@ body{
     }
 
     .front-container{
-      width: 100vw;
+      height: 1500px;
       background-image: url("./front-photo.jpg");
+
     }
 
     .front-photo{
