@@ -5,10 +5,15 @@ const save_comment = async (req, res) => {
   try {
     const response = res.cookie()
     const user_nickname = response.locals.user.nickname
-    const baseUrl = `http://localhost/blogs/`
     const url = req.headers.referer
-    console.log('url is :', url)
-    const startIndex = baseUrl.length
+    let urlSplit = url.split('')
+    let startIndex = 0
+    for (let i = urlSplit.length, k = 0; i > 0; i--, k++) {
+      if (urlSplit[i] === '/') {
+        startIndex = urlSplit.length - k + 1
+        break
+      }
+    }
     const blog_id = url.substr(startIndex)
     const blog_comment = req.body.comment
     const comment = new Comment({ blog_id, blog_comment, user_nickname })
