@@ -7,6 +7,11 @@ const api = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon
 const weatherInfo = async () => {
   try {
     const response = await axios.get(api)
+    if (response.data === undefined) {
+      response.data.current.temp = 'N/A'
+      response.data.current.weather[0].description = 'N/A'
+      response.data.current.dt = '0'
+    }
     return response.data
   } catch (e) {
     console.log(e)

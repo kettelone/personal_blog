@@ -50,7 +50,7 @@ body{
       margin: 80px auto 20px;
     }
     h2{
-      margin-bottom: 40px;
+      margin: 20px 0px;
     }
     h3{
       text-transform: capitalize;
@@ -89,19 +89,18 @@ body{
 /* Dropdown button */
 .dropdown .dropbtn {
   font-size: 16px;
-  border: none;
+  border: solid;
   outline: none;
   color: black;
   padding: 14px 16px;
-  background-color: grey;
-  border-radius: 25%;
+  background-color: cornsilk;;
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0 10px; /* Important for vertical align on mobile phones */
 }
 
 /* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: silver;
 }
 
 /* Dropdown content (hidden by default) */
@@ -276,7 +275,7 @@ body{
   padding-top: 30px;
 }
 .widget .weatherInfo {
-  flex: 0 0 70%;
+  flex: 0 0 65%;
   background: #080705;
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
@@ -301,14 +300,14 @@ body{
 }
 .widget .weatherInfo .description .weatherCondition {
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 100;
 }
-.widget .weatherInfo .description .place {
+/* .widget .weatherInfo .description .place {
   font-size: 24px;
-}
+} */
 .widget .date {
-  flex: 0 0 30%;
+  flex: 0 0 35%;
   background: #70c1b3;
   text-align: center;
   border-bottom-right-radius: 20px;
@@ -340,7 +339,7 @@ p a {
   justify-content: center;
   align-items: center;
   background: #080705;
-  font-size: 20px;
+  font-size: 1em;
   font-weight: bold;
   color: white;
   border-bottom-left-radius: 20px;
@@ -443,5 +442,27 @@ textarea{
 
  .widget .weatherInfo .description .weatherCondition {
   font-size: 14px;
+}
+
+.dropdown .dropbtn{
+  width: 90vw;
+  border: solid;
+  border-radius: none;
+}
+
+.dropdown-content{
+  width: 95vw;
+}
+.dropdown-content a {
+  text-align: center;
+}
+
+h2{
+  text-align: center;
+  margin: 20px 0px;
+}
+
+footer{
+  margin: 5px;
 }
 }

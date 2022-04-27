@@ -15,6 +15,13 @@ const currencyData = async () => {
       eur: Number(responseEUR.data.rates.UAH.rate).toFixed(2),
       usd: Number(responseUSD.data.rates.UAH.rate).toFixed(2),
     }
+
+    if (finalResponse === undefined) {
+      finalResponse = {
+        eur: 'no info',
+        usd: 'no info',
+      }
+    }
     return finalResponse
   } catch (e) {
     console.log(e)
