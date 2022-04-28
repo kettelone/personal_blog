@@ -18,7 +18,7 @@
         <% comments.forEach((comment) =>{ %>
           <div class="comment each-comment">
             <div class="info">
-              <h3><%= comment.blog_comment %></h3>
+              <h3 class="comment-text"><%= comment.blog_comment %></h3>
              <b><span><%= comment.user_nickname %> : </span></b>
               <span><%= new Date(comment.createdAt).toLocaleString('en-us',{ year: 'numeric', month: 'long', day: 'numeric', hour : 'numeric', minute : 'numeric'}) %></span>
             </div>
