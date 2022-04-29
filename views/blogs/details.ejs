@@ -65,21 +65,22 @@
         .catch(err => console.log(err));
       })
     })
-  </script>
 
-  <!-- <script>
+    // sort comments
+
     const sortButton = document.querySelector('.sort-by');
+    let notClicked = true
     sortButton.addEventListener('click', (e)=>{
-      e.preventDefault()
-    const comments = document.querySelectorAll('.comment')
-    const commentsArray = [...comments]
-    const sortedArray = []
-    commentsArray.forEach((el) => {
-      sortedArray.unshift(el)
-    })
-    console.log(commentsArray)
-    console.log(sortedArray)
-    })
-  </script> -->
+    let commentsDiv = document.getElementsByClassName("comments-container")[0];
+    console.log(commentsDiv.getAttribute('style'))
+    if(notClicked){
+      commentsDiv.style.setProperty('flex-direction', 'column-reverse')
+      notClicked = false
+    }else{
+      commentsDiv.style.setProperty('flex-direction', 'column')
+      notClicked = true
+    }
+  })
+  </script>
 </body>
 </html>

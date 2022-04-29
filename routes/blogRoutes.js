@@ -13,4 +13,5 @@ router.delete(
   '/:blog_id/:comment_id/comments',
   commentController.delete_comment
 )
+
 module.exports = router
