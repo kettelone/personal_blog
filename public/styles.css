@@ -188,6 +188,10 @@ body{
       flex-direction: column;
     }
 
+    #comment{
+      margin: 10px;
+    }
+
     .comment{
       border: 1px solid;
       border-radius: 5px;
@@ -200,6 +204,12 @@ body{
     .comment-text{
       font-size: 14px;
       font-weight: normal;
+    }
+
+    .submit-comment{
+      padding: 5px 30px;
+      background: cornsilk;
+      border: solid 2px;
     }
     .delete-comment:hover{
       cursor: pointer;
