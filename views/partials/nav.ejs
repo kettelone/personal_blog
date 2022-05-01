@@ -8,9 +8,16 @@
       </p>
      
     </div>
-   <a class="mirror-stream-container" href="https://en.wikipedia.org/wiki/Kharkiv" >
-      <img src="/mirror-stream.jpg" class="mirror-stream" alt="Kharkiv mirror-stream">
-   </a>
+    <div class="player-wrapper">
+      <a class="mirror-stream-container" href="https://en.wikipedia.org/wiki/Kharkiv" >
+        <img src="/mirror-stream.jpg" class="mirror-stream" alt="Kharkiv mirror-stream">
+     </a>
+      <audio controls>
+        <source src="/moby-new_dawn.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+    </div>
+   
    <div class="navbar">
     <div>
       <li>Welcome, <%= user.nickname %></li>
@@ -33,17 +40,4 @@
       </div>
     </div>
   </div>
-    <!-- <ul>
-      <% if (user){ %>
-          <li><a href="/">Blogs</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/blogs/create">New Blog</a></li>
-          <li><a href="/contact-us">Contact us</a></li>
-          <li>Welcome, <%= user.email %></li>
-          <li><a href="/logout" class="btn">Log out</a></li>
-      <% } else { %>
-          <li><a href="/login" class="btn">Log in</a></li>
-          <li><a href="/signup" class="btn">Sign up</a></li>
-      <% } %>
-    </ul> -->
   </nav>

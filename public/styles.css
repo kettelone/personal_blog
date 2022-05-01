@@ -140,6 +140,11 @@ body{
 }
  /* -----------Navbar container(end)-------------- */
 
+ .player-wrapper{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+ }
 
 /*mirror-stream icon*/
     .mirror-stream{

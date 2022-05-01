@@ -39,6 +39,7 @@
   <%- include("../partials/footer.ejs") %>
 
   <script>
+    
     //delete blog button handler
     const trashcan = document.querySelector('a.delete');
     trashcan.addEventListener('click', (e) => {
@@ -52,7 +53,6 @@
     });
     
     //delete comment button handler
-    
     const trashcan_comment = document.querySelectorAll('a.delete-comment');
     trashcan_comment.forEach(item =>{
         item.addEventListener('click', (e) => {
@@ -67,7 +67,6 @@
     })
 
     // sort comments
-
     const sortButton = document.querySelector('.sort-by');
     let notClicked = true
     sortButton.addEventListener('click', (e)=>{

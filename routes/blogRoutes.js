@@ -1,6 +1,7 @@
 const express = require('express')
 const blogController = require('../controllers/blogController')
 const commentController = require('../controllers/commentController')
+const soundCloudController = require('../controllers/soundCloudController')
 const router = express.Router()
 
 router.get('/create', blogController.blog_create_get)
@@ -13,5 +14,6 @@ router.delete(
   '/:blog_id/:comment_id/comments',
   commentController.delete_comment
 )
+router.post('/play', soundCloudController.play_music)
 
 module.exports = router

@@ -6,6 +6,7 @@
     <%- include('../partials/nav.ejs')%>
 
     <%# Kharkiv wether widget %>
+
     <div class="widget-section">
         <div class="widget weather-widget">
             <div class="weatherInfo">
@@ -36,6 +37,7 @@
             </div>
         </div>
     </div>
+    
 
         <hr class="hr">
     <div class="front-container"></div>
@@ -57,6 +59,14 @@
     </div>
 
     <%- include('../partials/footer.ejs')%>
-    
+    <script>
+        const playButton = document.getElementById('play-music-button')
+        playButton.addEventListener('click', (e)=>{
+            
+        fetch(`/blogs/play`, { 
+          method: 'POST'      
+        }).then(response => response.json())
+        })
+    </script>
 </body>
 </html>
