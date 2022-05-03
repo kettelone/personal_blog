@@ -7,8 +7,8 @@ const cookieParser = require('cookie-parser')
 const blogRoutes = require('./routes/blogRoutes')
 const contactRoute = require('./routes/contactUsRoutes')
 const authRoutes = require('./routes/authRouters')
+const galleryRoute = require('./routes/galleryRoute')
 const { requireAuth, checkUser } = require('./middleware/authMiddleware')
-// const { render } = require('ejs')
 
 //express app
 const app = express()
@@ -44,6 +44,7 @@ app.get('/about', requireAuth, checkUser, (req, res) => {
 })
 app.use('/blogs', requireAuth, checkUser, blogRoutes)
 app.use(authRoutes)
+app.use(checkUser, galleryRoute)
 app.use(requireAuth, checkUser, contactRoute)
 
 //404 page

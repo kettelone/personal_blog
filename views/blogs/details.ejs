@@ -70,15 +70,14 @@
     const sortButton = document.querySelector('.sort-by');
     let notClicked = true
     sortButton.addEventListener('click', (e)=>{
-    let commentsDiv = document.getElementsByClassName("comments-container")[0];
-    console.log(commentsDiv.getAttribute('style'))
-    if(notClicked){
-      commentsDiv.style.setProperty('flex-direction', 'column-reverse')
-      notClicked = false
-    }else{
-      commentsDiv.style.setProperty('flex-direction', 'column')
-      notClicked = true
-    }
+      let commentsDiv = document.getElementsByClassName("comments-container")[0];
+      if(notClicked){
+        commentsDiv.style.setProperty('flex-direction', 'column-reverse')
+        notClicked = false
+      }else{
+        commentsDiv.style.setProperty('flex-direction', 'column')
+       notClicked = true
+     }
   })
   </script>
 </body>
