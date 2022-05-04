@@ -36,8 +36,6 @@
         const deleteImgButton = document.querySelectorAll('.delete-img');
         deleteImgButton.forEach((item) =>{
             item.addEventListener('click', (e) => {
-            console.log(e.target)
-            console.log(deleteImgButton)
             const imgID = e.target.dataset.id
             fetch(`/delete-image/${imgID}`, { 
                 method: 'POST',

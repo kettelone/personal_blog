@@ -42,3 +42,16 @@
     </div>
   </div>
   </nav>
+
+  <script>
+    const menu = document.querySelectorAll(".dropbtn")
+    menu[0].addEventListener('click', (e)=>{
+      const dropDownMenu = document.querySelectorAll('.dropdown-content')
+      const clicked = document.querySelectorAll('.menu-clicked')
+      if(clicked.length === 0){
+        dropDownMenu[0].classList.add('menu-clicked')
+      }else{
+        dropDownMenu[0].classList.remove('menu-clicked')
+      }
+    })
+  </script>
