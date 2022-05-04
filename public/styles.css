@@ -530,7 +530,7 @@ footer{
 .front-container{
   width: auto;
   height: 239px;
-  background-image: url("./front-photo-small.jpg");
+  background-image: url("./images/front-photo-small.jpg");
 }
 .create-blog form{
   text-align: center;
