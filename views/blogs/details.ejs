@@ -10,10 +10,13 @@
       <p><%= blog.body %></p>
       <form class="comment-form" action="/blogs/:id/comments" method="POST">
         <label for="comment">Comments:</label>
-        <input type="text" id="comment" name="comment">
+        <input type="text" id="comment" name="comment" required>
         <button class="submit-comment">Submit</button>
       </form>
-      <div class="sort-by">Sort</div>
+      <div class="sort-by">
+        Sort
+        <i class="fa fa-caret-down"></i>
+      </div>
       <div class="comments-container">
         <% comments.forEach((comment) =>{ %>
           <div class="comment each-comment">
@@ -69,13 +72,18 @@
     // sort comments
     const sortButton = document.querySelector('.sort-by');
     let notClicked = true
+    const sortArrow = document.querySelectorAll('.sort-by .fa')
     sortButton.addEventListener('click', (e)=>{
       let commentsDiv = document.getElementsByClassName("comments-container")[0];
       if(notClicked){
         commentsDiv.style.setProperty('flex-direction', 'column-reverse')
+        sortArrow[0].classList.remove('fa-caret-down')
+        sortArrow[0].classList.add('fa-caret-up')
         notClicked = false
       }else{
         commentsDiv.style.setProperty('flex-direction', 'column')
+        sortArrow[0].classList.remove('fa-caret-up')
+        sortArrow[0].classList.add('fa-caret-down')
        notClicked = true
      }
   })

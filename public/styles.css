@@ -129,15 +129,6 @@ body{
   text-align: left;
 }
 
-/* Add a grey background color to dropdown links on hover */
-/* .dropdown-content a:hover {
-  background-color: #ddd;
-} */
-
-/* Show the dropdown menu on hover */
-/* .dropdown:hover .dropdown-content {
-  display: block;
-} */
 .menu-clicked{
   display: block;
 }
@@ -231,17 +222,12 @@ body{
     .sort-by{
       border-radius: 5px;
       border: solid black 1px;
-      background-color: grey;
-      color: white;
+      background-color: cornsilk;
+      color: black;
       width: 100px;
       cursor: pointer;
 
     }
-
-    .sort-by:hover{
-      background-color: #080705;
-    }
-
 
     /* create styles */
     .create-blog form{
