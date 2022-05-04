@@ -59,14 +59,5 @@
     </div>
 
     <%- include('../partials/footer.ejs')%>
-    <script>
-        const playButton = document.getElementById('play-music-button')
-        playButton.addEventListener('click', (e)=>{
-            
-        fetch(`/blogs/play`, { 
-          method: 'POST'      
-        }).then(response => response.json())
-        })
-    </script>
 </body>
 </html>
