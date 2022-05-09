@@ -47,7 +47,7 @@ app.get('/about', requireAuth, checkUser, (req, res) => {
 app.use('/blogs', requireAuth, checkUser, blogRoutes)
 app.use(authRoutes)
 app.use(checkUser, galleryRoute)
-app.use(checkUser, audioRoute)
+// app.use(checkUser, audioRoute)
 app.use(requireAuth, checkUser, contactRoute)
 
 //404 page

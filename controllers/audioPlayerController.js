@@ -46,9 +46,10 @@ const playAudio = async (req, res) => {
 const getAudio = async (req, res) => {
   try {
     const fileName = req.body.audioUrl
+    console.log(fileName)
+    // const destFileName = `C:\\Users\\guest_3rh8a7w\\VS CODE\\Lambda-internship\\Side project\\Blog\\public\\audio\\${fileName}`
     const destFileName =
       path.join(__dirname, '../') + `public\\audio\\${fileName}`
-
     if (!fs.existsSync(destFileName)) {
       async function streamFileDownload() {
         // The example below demonstrates how we can reference a remote file, then
