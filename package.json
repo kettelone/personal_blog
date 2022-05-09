@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/storage": "^5.19.4",
     "axios": "^0.26.0",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.2",
@@ -24,7 +25,9 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.4",
     "nodemailer": "^6.7.2",
+    "path": "^0.12.7",
     "soundcloud-audio": "^1.4.0",
+    "util": "^0.12.4",
     "uuid": "^8.3.2",
     "validator": "^13.7.0"
   }

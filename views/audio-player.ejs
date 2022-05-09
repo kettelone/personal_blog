@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head.ejs')%>
+
+<body>
+    <% if(audioInfo.length > 0){%>
+        <div class="audio-container">
+            <% audioInfo.forEach((data) =>{ %>
+            <div class="single-audio">
+                <div>
+                    <%= data[1] %>
+                    <audio id="<%= data[1] %>" class="music_player" src="audio/<%= data[1] %>" type="audio/mpeg"></audio>
+                </div>
+                <div class="audio-control-buttons">
+                    <button id="play-<%= data[1] %>" data-url="<%= data[1] %>" onclick="play_aud('<%= data[1] %>')">Play</button>
+                    <button id="pause-<%= data[1] %>" onclick="pause_aud('<%= data[1] %>')">||</button>
+                    <button id="stop-<%= data[1] %>" onclick="stop_aud('<%= data[1] %>')">Stop</button>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+            <% }else { %>
+        
+                <div style="text-align: center">There is no audios to be palyed...</div>
+        
+            <% } %>
+
+    <div class="audio-form-wrapper">
+        <form action="/upload-audio"  class="audio-form" method="POST" enctype="multipart/form-data" >
+            <label for="audio">Select audio:</label>
+            <input type="file" id="audio" name="audio" accept="audio/*">
+            <input type="submit">
+          </form>
+    </div>
+    
+    <%- include('./partials/footer.ejs')%>
+    <script src="js/audioScript.js"></script>
+
+</body>
+</html>

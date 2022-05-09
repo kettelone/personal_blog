@@ -1,4 +1,5 @@
 require('dotenv').config()
+const path = require('path')
 const express = require('express')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
@@ -8,6 +9,7 @@ const blogRoutes = require('./routes/blogRoutes')
 const contactRoute = require('./routes/contactUsRoutes')
 const authRoutes = require('./routes/authRouters')
 const galleryRoute = require('./routes/galleryRoute')
+const audioRoute = require('./routes/audioPlayerRoute')
 const { requireAuth, checkUser } = require('./middleware/authMiddleware')
 
 //express app
@@ -45,6 +47,7 @@ app.get('/about', requireAuth, checkUser, (req, res) => {
 app.use('/blogs', requireAuth, checkUser, blogRoutes)
 app.use(authRoutes)
 app.use(checkUser, galleryRoute)
+app.use(checkUser, audioRoute)
 app.use(requireAuth, checkUser, contactRoute)
 
 //404 page
