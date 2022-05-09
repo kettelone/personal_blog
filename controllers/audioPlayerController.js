@@ -46,8 +46,8 @@ const playAudio = async (req, res) => {
 const getAudio = async (req, res) => {
   try {
     const fileName = req.body.audioUrl
-    console.log(fileName)
-    const destFileName = `C:\\Users\\guest_3rh8a7w\\VS CODE\\Lambda-internship\\Side project\\Blog\\public\\audio\\${fileName}`
+    const destFileName =
+      path.join(__dirname, '../') + `public\\audio\\${fileName}`
 
     if (!fs.existsSync(destFileName)) {
       async function streamFileDownload() {
@@ -63,15 +63,14 @@ const getAudio = async (req, res) => {
             // The file download is complete
           })
 
-        console.log(
-          `gs://${process.env.GOOGLE_CLOUD_BUCKET}/${fileName} downloaded to ${destFileName}.`
-        )
+        // console.log(
+        //   `gs://${process.env.GOOGLE_CLOUD_BUCKET}/${fileName} downloaded to ${destFileName}.`
+        // )
       }
 
       streamFileDownload()
         .catch(console.error)
         .then(res.json({ redirect: `/audio-player` }))
-      // res.json({ redirect: `/audio-player` })
     }
 
     // download object from Google Cloud Storage bucket
