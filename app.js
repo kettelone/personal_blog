@@ -44,6 +44,7 @@ app.get('/', requireAuth, checkUser, (req, res) => {
 app.get('/about', requireAuth, checkUser, (req, res) => {
   res.render('about', { title: 'About' })
 })
+
 app.use('/blogs', requireAuth, checkUser, blogRoutes)
 app.use(authRoutes)
 app.use(checkUser, galleryRoute)
