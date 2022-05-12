@@ -76,6 +76,7 @@ body{
 }
 
 .user-name{
+  padding: 10px 0px;
   display: flex;
   align-items:center;
 }
@@ -219,7 +220,7 @@ body{
       border-radius: 5px;
       border: none;
       box-shadow: 1px 3px 5px rgb(0 0 0 / 50%);
-      cursor: pointer;
+      cursor: pointer ;
     }
     .delete-comment:hover{
       cursor: pointer;
@@ -505,6 +506,11 @@ textarea{
   .navbar{
     flex-direction: column;
 
+  }
+
+  .user-name{
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   .blog-name{
