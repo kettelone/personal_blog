@@ -3,19 +3,20 @@
       <a href="/"><h1 class = 'blog-name'>Kharkiv Blog</h1></a>
       <p class="hero-city">The hero city
         <a href="https://en.wikipedia.org/wiki/Ukraine">
-          <img src="images/ukraine.svg" class="ukraine-icon" alt="Ukraine flag">
+          <img src="/images/ukraine.svg" class="ukraine-icon" alt="Ukraine flag">
        </a>
       </p>
      
     </div>
     <div class="player-wrapper">
       <a class="mirror-stream-container" href="https://en.wikipedia.org/wiki/Kharkiv" >
-        <img src="images/mirror-stream.jpg" class="mirror-stream" alt="Kharkiv mirror-stream">
+        <img src="/images/mirror-stream.jpg" class="mirror-stream" alt="Kharkiv mirror-stream">
      </a>
     </div>
    
    <div class="navbar">
-    <div>
+    <div class="user-name">
+      <img id="user-icon" src="/images/person-icon.png">
       <li><%= user.nickname %></li>
     </div>
     <div class="dropdown">
@@ -28,7 +29,6 @@
           <a href="/about">About</a>
           <a href="/blogs/create">New Blog</a>
           <a href="/gallery">Gallery</a>
-          <!-- <a href="/audio-player">Audio</a> -->
           <a href="/contact-us">Contact us</a>
           <a href="/logout" class="btn">Log out</a>
         <% } else { %>

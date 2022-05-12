@@ -3,7 +3,6 @@
 
 <body>
   <%- include("../partials/nav.ejs") %>
-
   <div class="details content">
     <h2><%= blog.title %></h2>
     <div class="content">
@@ -27,14 +26,14 @@
             </div>
             <div>
               <a class="delete-comment" data-comment="<%= comment._id %>" data-blog="<%= comment.blog_id %>">
-                <img src="/delete.svg" alt="delete icon">
+                <img src="/images/delete.svg" alt="delete icon">
               </a>
             </div>
           </div>
         <% }); %>
       </div>
       <a class="delete" data-doc="<%= blog._id %>">
-        <img src="/delete.svg" alt="delete icon">
+        <img src="/images/delete.svg" alt="delete icon">
       </a>
     </div>
   </div>
