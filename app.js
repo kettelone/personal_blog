@@ -14,7 +14,7 @@ const { requireAuth, checkUser } = require('./middleware/authMiddleware')
 
 //express app
 const app = express()
-
+console.log('Hello')
 //connect to mongodb
 const dbURI =
   `mongodb+srv://blogUser:${process.env.MONGODB_PASSWORD}@cluster0.3b5zr.mongodb.net/?retryWrites=true&w=majority`
