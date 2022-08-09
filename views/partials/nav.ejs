@@ -17,7 +17,11 @@
    <div class="navbar">
     <div class="user-name">
       <img id="user-icon" src="/images/person-icon.png">
-      <li><%= user.nickname %></li>
+      <% if (user){ %>
+        <li>
+          <%= user.nickname %>
+        </li>
+        <% } %>
     </div>
     <div class="dropdown">
       <button class="dropbtn">Menu
