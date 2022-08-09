@@ -17,7 +17,7 @@ const app = express()
 
 //connect to mongodb
 const dbURI =
-  `mongodb+srv://blogUser:${process.env.MONGODB_PASSWORD}@cluster0.8uqxpng.mongodb.net/?retryWrites=true&w=majority`
+  `mongodb+srv://blogUser:${process.env.MONGODB_PASSWORD}@cluster0.3b5zr.mongodb.net/?retryWrites=true&w=majority`
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(process.env.PORT || 80))
